@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your cart — INK'D Prints Reno</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/inkd-logo.jpg" alt="" width="42" height="42"><span>INK'D Prints</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/design.html">Design studio</a>
+      <a href="/#prices">Prices</a>
+      <a href="/#wraps">Wraps</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="cart-link" href="/cart.html" aria-label="Cart" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+      <span class="cart-count" data-cart-count hidden>0</span><span class="cart-word">Cart</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main" class="wrap cart-page">
+  <h1 class="misreg-sm">Your cart</h1>
+
+  <div id="cart-empty" class="empty" hidden>
+    <h2>Your cart is empty.</h2>
+    <p>Pick a product, upload your logo and add it here when the preview looks right.</p>
+    <a class="btn" href="/design.html">Start designing</a>
+  </div>
+
+  <div class="cart-grid" id="cart-main" hidden>
+    <ul id="cart-items" aria-label="Items in your cart"></ul>
+
+    <aside class="summary" aria-labelledby="sum-h">
+      <h2 id="sum-h">Checkout</h2>
+      <fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px">
+        <legend class="visually-hidden">How do you want to get your order?</legend>
+        <label class="radio"><input type="radio" name="fulfillment" value="pickup" checked><span>Pick up at the shop<small>240 Linden St, Reno · Mon–Fri 10–6</small></span><span class="amt">Free</span></label>
+        <label class="radio"><input type="radio" name="fulfillment" value="ship"><span>Ship it to me<small>Anywhere in the US</small></span><span class="amt" id="ship-price"></span></label>
+      </fieldset>
+      <div class="field"><label for="need-by">Need it by <span class="opt">(optional)</span></label><input type="date" id="need-by"></div>
+      <div class="field"><label for="order-notes">Order notes <span class="opt">(optional)</span></label><textarea id="order-notes" style="min-height:80px"></textarea></div>
+      <dl class="totals">
+        <dt>Subtotal</dt><dd id="sum-sub">$0.00</dd>
+        <dt>Pickup / shipping</dt><dd id="sum-ship">Free</dd>
+        <dt>Total</dt><dd class="grand" id="sum-total">$0.00</dd>
+      </dl>
+      <button type="button" class="btn block" id="pay-btn">Pay securely with Stripe</button>
+      <p class="form-status" id="pay-status" role="status" aria-live="polite"></p>
+      <p class="tax-note">You'll enter your card, email and phone on Stripe's secure page. We review your artwork before printing and reach out if anything needs a tweak.</p>
+
+      <details id="request">
+        <summary>Rather pay at pickup? Send the order as a request</summary>
+        <form id="request-form" novalidate>
+          <div class="field"><label for="r-name">Name</label><input id="r-name" name="rname" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="r-email">Email</label><input id="r-email" name="remail" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="rphone" type="tel" autocomplete="tel" required></div>
+          <button class="btn ghost block" type="submit">Send order request</button>
+          <p class="form-status" id="request-status" role="status" aria-live="polite"></p>
+        </form>
+      </details>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="tag">INK'D Prints — The Biggest Little Print Shop</span>
+    <span>240 Linden St, Reno, NV · <a href="tel:+17752975632">775-297-5632</a></span>
+  </div>
+</footer>
+<script type="module" src="/js/site.js"></script>
+<script type="module" src="/js/cart-page.js"></script>
+</body>
+</html>

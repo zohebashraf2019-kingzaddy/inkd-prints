@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design studio — INK'D Prints Reno</title>
+  <meta name="description" content="Upload your logo and preview it on custom cups, T-shirts, banners, flyers, stickers, labels and vehicle decals. Live pricing, secure checkout.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Black&family=Bungee&family=Pacifico&family=Permanent+Marker&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/inkd-logo.jpg" alt="" width="42" height="42"><span>INK'D Prints</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/design.html" aria-current="page">Design studio</a>
+      <a href="/#prices">Prices</a>
+      <a href="/#wraps">Wraps</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="cart-link" href="/cart.html" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+      <span class="cart-count" data-cart-count hidden>0</span><span class="cart-word">Cart</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="studio-top">
+    <nav class="tabs" id="product-tabs" aria-label="Products"></nav>
+    <h1 id="product-title" class="misreg-sm">Design studio</h1>
+    <p id="product-blurb"></p>
+  </div>
+
+  <div class="studio">
+    <div class="stage-col">
+      <div id="stage-wrap">
+        <canvas id="stage" tabindex="0" aria-label="Live product preview. Drag your design to move it, drag a corner to resize. Arrow keys nudge the selected item."></canvas>
+        <div class="busy-layer" aria-hidden="true"><span id="busy-msg"></span></div>
+      </div>
+      <div class="stage-bar">
+        <div class="chips" id="view-toggle" hidden></div>
+        <p><span id="view-label"></span> Drag to move · pull a corner to resize · drop a file anywhere on the preview</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <section class="step" aria-labelledby="s1">
+        <h2 id="s1"><span class="n">1</span>Add your design</h2>
+        <div class="add-row">
+          <label class="btn upload-btn">Upload logo
+            <input type="file" id="upload" accept="image/png,image/jpeg,image/webp,image/svg+xml,image/gif" multiple>
+          </label>
+          <button type="button" class="btn ghost" id="add-text">Add text</button>
+        </div>
+        <p class="small-print">PNG with a transparent background works best. JPGs on white get their background removed automatically — you can turn that off per image.</p>
+        <p id="layers-empty">Nothing on it yet. Upload a logo or add some text to see it on the product.</p>
+        <ul id="layers" aria-label="Items in your design"></ul>
+        <div id="layer-controls" hidden></div>
+      </section>
+
+      <section class="step" aria-labelledby="s2">
+        <h2 id="s2"><span class="n">2</span>Choose options</h2>
+        <div id="options"></div>
+      </section>
+
+      <section class="step review" aria-labelledby="s3">
+        <h2 id="s3"><span class="n">3</span>Review & add to cart</h2>
+        <p id="summary"></p>
+        <div class="field">
+          <label for="notes">Notes for the printer <span class="opt">(optional)</span></label>
+          <textarea id="notes" placeholder="Exact Pantone colors, “make the logo bigger”, need-by date…"></textarea>
+        </div>
+        <div id="price" aria-live="polite"><span class="total">—</span><span class="unit"></span><p class="err"></p></div>
+        <button type="button" class="btn block" id="add-to-cart">Add to cart</button>
+        <ul class="trust">
+          <li>We check every file before printing</li>
+          <li>Secure checkout by Stripe</li>
+          <li>Pickup on Linden St or shipping</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="tag">INK'D Prints — The Biggest Little Print Shop</span>
+    <span>240 Linden St, Reno, NV · <a href="tel:+17752975632">775-297-5632</a></span>
+  </div>
+</footer>
+<script type="module" src="/js/studio.js"></script>
+</body>
+</html>
